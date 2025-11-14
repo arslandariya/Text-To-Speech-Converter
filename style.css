@@ -14,6 +14,8 @@
     justify-content: center;
     flex-direction: column;
     color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 .hero h1 {
@@ -29,7 +31,8 @@
 }
 
 textarea {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 250px;
     background: #2d2b55;
     color: #fff;
@@ -53,10 +56,13 @@ textarea::placeholder {
 }
 
 .row {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
+    justify-content: center;
 }
 
 button {
@@ -70,8 +76,11 @@ button {
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
     box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
     transition: 0.3s ease;
+    flex: 1 1 auto;
+    min-width: 120px;
 }
 
 button:hover {
@@ -86,7 +95,7 @@ button img {
 }
 
 select {
-    flex: 1;
+    flex: 1 1 auto;
     color: #fff;
     background: #2d2b55;
     height: 50px;
@@ -101,6 +110,7 @@ select {
     background-position-y: 50%;
     font-size: 15px;
     transition: 0.3s ease;
+    min-width: 150px;
 }
 
 select:focus {
@@ -111,4 +121,54 @@ select:focus {
 select option {
     background: #2d2b55;
     color: #fff;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 35px;
+        margin-top: -30px;
+        margin-bottom: 30px;
+    }
+
+    textarea {
+        height: 200px;
+        padding: 15px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    select {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    textarea {
+        height: 180px;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    select {
+        font-size: 14px;
+        height: 45px;
+        padding: 0 15px;
+    }
 }
